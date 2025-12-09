@@ -6,32 +6,66 @@
     <title>Home</title>
    <style>
         body{
-          padding: 0px 0px 0px 0px;
-          margin: 0px 0px 0px 0px;
+          padding: 0px;
+          margin: 0px;
         }
         .navigationbar {
-      background-color: rgb(73, 73, 192);
-      overflow: hidden;
-    }
+          background-color: rgb(73, 73, 192);
+          overflow: hidden;
+        }
+        .navigationbar a {
+          float: left;
+          color: #f2f2f2;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+          font-size: 17px;
+        }
+        .navigationbar a:hover {
+          background-color: rgb(116, 116, 158);
+          color: black;
+        }
+        .navigationbar a.active {
+          background-color: #0ba1cf;
+          color: black;
+        }
+        .container {
+          display: flex;
+          max-width: 1200px;
+          margin: 30px auto;
+          gap: 20px;
+        }
+        .left-section {
+          flex: 2;
+          background: #fff;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+        }
+        .left-section img {
+          width: 100%;
+          height: auto;
+          display: block;
+        }
+        .left-section .product-text {
+          padding: 20px 10px 10px 10px;
+        }
 
-.navigationbar a {
-  float: left;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-}
+        .product-desc {
+          color: #222;
+        }
+        .right-section {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+        }
+        .right-section img {
+          width: 100%;
+          height: auto;
+          display: block;
+        }
 
-.navigationbar a:hover {
-  background-color: rgb(116, 116, 158);
-  color: black;
-}
-
-.navigationbar a.active {
-  background-color: #0ba1cf;
-  color: black;
-}
     </style>
 </head>
 <body>
@@ -41,5 +75,20 @@
   <a href="Contact.html">Contact</a>
   <a href="About Us.html">About Us</a>
 </div>
+    <div class="container">
+      <div class="left-section">
+        <img src="sneaker.jpg" alt="SneakerSale">
+        <div class="product-text">
+          <div class="product-title">Sneaker White</div>
+          <div class="product-desc">Limited Edition</div>
+        </div>
+      </div>
+      <div class="right-section">
+        <img src="15.png" alt="Gift Guide">
+        <img src="sneakerbundle.jpg" alt="Christmas Sale">
+       
+      </div>
+    </div>
+
 </body>
 </html>
