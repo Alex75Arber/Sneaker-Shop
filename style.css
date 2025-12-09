@@ -1,0 +1,106 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 50px;
+    background-color: #101010; 
+    border-bottom: 3px solid #ff5050; 
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.logo {
+    color: #fff;
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+}
+
+.logo span {
+    color: #ff5050;
+    font-style: italic;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 35px; 
+    align-items: center;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 600;
+    padding: 6px 10px;
+    border-radius: 4px;
+    transition: all 0.25s ease;
+}
+
+.nav-links a:hover {
+    color: #ff5050;
+    background-color: rgba(255,80,80,0.1);
+}
+
+.login-btn {
+    border: 2px solid #ff5050;
+    padding: 7px 18px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.login-btn:hover {
+    background-color: #ff5050;
+    color: #fff;
+    transform: scale(1.05);
+}
+
+.mbl {
+    display: none;
+    font-size: 30px;
+    color: #fff;
+    cursor: pointer;
+}
+
+#menu-toggle {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .mbl {
+        display: block;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 70px;
+        right: 0;
+        width: 100%;
+        background-color: #101010;
+        flex-direction: column;
+        text-align: center;
+        padding: 25px 0;
+        gap: 25px;
+        display: none;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    }
+
+    #menu-toggle:checked ~ .nav-links {
+        display: flex;
+    }
+
+    .nav-links a {
+        font-size: 18px;
+        padding: 12px 0;
+    }
+
+    .login-btn {
+        width: 70%;
+        margin: 0 auto;
+    }
+}
