@@ -9,26 +9,6 @@
           padding: 0px;
           margin: 0px;
         }
-        .navigationbar {
-          background-color: rgb(73, 73, 192);
-          overflow: hidden;
-        }
-        .navigationbar a {
-          float: left;
-          color: #f2f2f2;
-          text-align: center;
-          padding: 14px 16px;
-          text-decoration: none;
-          font-size: 17px;
-        }
-        .navigationbar a:hover {
-          background-color: rgb(116, 116, 158);
-          color: black;
-        }
-        .navigationbar a.active {
-          background-color: #0ba1cf;
-          color: black;
-        }
         .container {
           display: flex;
           max-width: 1200px;
@@ -69,12 +49,21 @@
     </style>
 </head>
 <body>
-    <div class="navigationbar">
-  <a class="active" href="Home.html">Home</a>
-  <a href="Shop.html">Shop</a>
-  <a href="Contact.html">Contact</a>
-  <a href="About Us.html">About Us</a>
-</div>
+  <nav class="navbar">
+    <div class="logo">Sneaker<span>Shop</span></div>
+
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="mbl">&#9776;</label>
+    <link rel="stylesheet" href="style.css">
+
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="login.html" class="login-btn">Login</a></li>
+    </ul>
+</nav>
+
     <div class="container">
       <div class="left-section">
         <img src="sneaker.jpg" alt="SneakerSale">
