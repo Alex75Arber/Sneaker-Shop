@@ -5,6 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
    <style>
+            .top-sellers-slider {
+              max-width: 1200px;
+              margin: 40px auto 0 auto;
+              text-align: center;
+            }
+            .top-sellers-row {
+              display: flex;
+              align-items: stretch;
+              justify-content: center;
+              gap: 24px;
+            }
+            .shoe-card {
+              background: #222;
+              border-radius: 10px;
+              width: 220px;
+              min-width: 220px;
+              max-width: 220px;
+              height: 260px;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: flex-start;
+              padding: 12px 8px;
+            }
+            .shoe-card img {
+              width: 120px;
+              height: 120px;
+              object-fit: cover;
+              border-radius: 8px;
+              margin-bottom: 4px;
+            }
+            .shoe-brand {
+              color: #aaa;
+              background: #444;
+              border-radius: 6px;
+              padding: 2px 10px;
+              margin-bottom: 2px;
+            }
+            .shoe-name {
+              color: #fff;
+              margin-bottom: 2px;
+            }
+            .shoe-price {
+              color: #fff;
+              margin-bottom: 2px;
+            }
         body{
           padding: 0px;
           margin: 0px;
@@ -68,6 +114,35 @@
         }
 
     </style>
+    <script>
+      let i = 0;
+      function updateShoes() {
+        const cards = document.querySelectorAll('.shoe-card');
+        for (let x = 0; x < cards.length; x++) {
+          if (x >= i && x < i + 4) {
+            cards[x].style.display = 'flex';
+          } else {
+            cards[x].style.display = 'none';
+          }
+        }
+        document.getElementById('prevBtn').disabled = (i === 0);
+        document.getElementById('nextBtn').disabled = (i + 4 >= cards.length);
+      }
+      function nextShoes() {
+        const cards = document.querySelectorAll('.shoe-card');
+        if (i + 4 < cards.length) {
+          i++;
+          updateShoes();
+        }
+      }
+      function prevShoes() {
+        if (i > 0) {
+          i--;
+          updateShoes();
+        }
+      }
+      window.onload = function() { updateShoes(); };
+    </script>
 </head>
 <body>
   <nav class="navbar">
@@ -89,7 +164,7 @@
       <div class="left-section">
         <img src="sneaker.png" alt="SneakerSale">
         <div class="product-text">
-          <div class="product-title">Sneaker White</div>
+          <div class="product-title">Sneaker Red</div>
           <div class="product-desc">Limited Edition</div>
         </div>
       </div>
@@ -102,5 +177,64 @@
       </div>
     </div>
 
+     <div class="SellerTopDiv">
+    <div class="top-sellers-slider" style="margin-bottom: 30px;">
+      <h1 style="color: #fff; margin-bottom: 10px; font-size: 60px;">Top Sellers</h1>
+      <div style="display: flex; align-items: center;">
+        <button id="prevBtn" onclick="prevShoes()" style="background: #222; color: #fff; border: 1px solid #888; border-radius: 6px; padding: 0 18px; width: auto; height: 40px; font-size: 40px; margin-right: 12px; ">&#8592;</button>
+        <div class="top-sellers-row">
+          <div class="shoe-card">
+            <a href="#shoe1"><img src="shoe.png" alt="Shoe Example"></a>
+            <div class="shoe-brand">Shoe Comp</div>
+            <div class="shoe-name">Shoe Example</div>
+            <div class="shoe-price">$120</div>
+          </div>
+          <div class="shoe-card">
+            <a href="#shoe2"><img src="shoe.png" alt="Shoe Example"></a>
+            <div class="shoe-brand">Shoe Comp</div>
+            <div class="shoe-name">Shoe Example</div>
+            <div class="shoe-price">$140</div>
+          </div>
+          <div class="shoe-card">
+            <a href="#shoe3"><img src="shoe.png" alt="Shoe Example"></a>
+            <div class="shoe-brand">Shoe Comp</div>
+            <div class="shoe-name">Shoe Example</div>
+            <div class="shoe-price">$110</div>
+          </div>
+          <div class="shoe-card">
+            <a href="#shoe4"><img src="shoe.png" alt="Shoe Example"></a>
+            <div class="shoe-brand">Shoe Comp</div>
+            <div class="shoe-name">Shoe Example</div>
+            <div class="shoe-price">$100</div>
+          </div>
+          <div class="shoe-card">
+            <a href="#shoe5"><img src="shoe.png" alt="Shoe Example"></a>
+            <div class="shoe-brand">Shoe Comp</div>
+            <div class="shoe-name">Shoe Example</div>
+            <div class="shoe-price">$95</div>
+          </div>
+          <div class="shoe-card">
+            <a href="#shoe6"><img src="shoe.png" alt="Shoe Example"></a>
+            <div class="shoe-brand">Shoe Comp</div>
+            <div class="shoe-name">Shoe Example</div>
+            <div class="shoe-price">$80</div>
+          </div>
+          <div class="shoe-card">
+            <a href="#shoe7"><img src="shoe.png" alt="Shoe Example"></a>
+            <div class="shoe-brand">Shoe Comp</div>
+            <div class="shoe-name">Shoe Example</div>
+            <div class="shoe-price">$85</div>
+          </div>
+          <div class="shoe-card">
+            <a href="#shoe8"><img src="shoe.png" alt="Shoe Example"></a>
+            <div class="shoe-brand">Shoe Comp</div>
+            <div class="shoe-name">Shoe Example</div>
+            <div class="shoe-price">$90</div>
+          </div>
+        </div>
+        <button id="nextBtn" onclick="nextShoes()" style="background: #222; color: #fff; border: 1px solid #888; border-radius: 6px; padding: 0 18px; width: auto; height: 40px; font-size: 40px; margin-left: 12px;">&#8594;</button>
+      </div>
+    </div>
+    </div>
 </body>
 </html>
